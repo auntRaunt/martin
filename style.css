@@ -1,101 +1,141 @@
 * {
   margin: 0;
   padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5d4954;
+}
+
+.logo {
+  color: rgb(238, 235, 235);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links a {
+  color: rgb(235, 238, 236);
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links a:active{
+  color: rgba(217, 230, 163, 0.17);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(238, 235, 235);
+  margin: 5px;
+  transition: all 0.3s ease; 
 }
 
 /*If the srceen are 1200px or below*/
-@media only screen and (min-width: 600px) {
-  .icon {
-    display: block;
-  }
-  .n-icon a {
-    display: none;
-  }
-  .interest-list {
-    display: flex;
-  }
-  #myphoto {
-    display: none;
-    width: 0;
-  }
-  .intro {
-    width: 100%;
-    height: 450px;
-    background-color: rgba(196, 189, 177, 0.17);
-  }
-  .intro-wrapp {
-    width: 90%;
-    height: 400px;
-    margin: 40px auto;
-    position: relative;
-  }
-  .intro-intro-wrap {
-    padding: 20px;
-    width: 90%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .icon {
-    display: none;
-  }
-  .n-icon a {
-    display: block;
-  }
-  #myphoto {
-    display: block;
-  }
-  .intro {
-    width: 100%;
-    height: 700px;
-    background-color: rgba(196, 189, 177, 0.17);
-  }
-
-  .intro-wrapp {
-    width: 90%;
-    height: 650px;
-    margin: 40px auto;
-    position: relative;
-  }
-
-  .intro-intro-wrap {
-    padding: 80px;
+@media only screen and (max-width: 1024px) {
+  .nav-links {
     width: 50%;
   }
+  .intro-photo img{
+    display: none;
+  }
+  #intro-sentence{
+    width: 70vw;
+  }
+
+
 }
 
 /*when zoomed to 300% = 600px*/
-@media only screen and (max-width: 600px) {
-  .icon {
+@media only screen and (max-width: 768px) {
+  
+  body{
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5d4954;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li{
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+    cursor: pointer;
+  }
+  #interest-list-id{
     display: block;
   }
-  .n-icon a {
-    display: none;
-  }
-  #myphoto {
-    display: none;
-    width: 0;
-  }
-  .interest-list {
+  /* #contact{
+    position: absolute;
+    bottom: 0;
+  } */
+}
+
+@media only screen and (max-width: 600px){
+  .interest-list{
     display: block;
   }
-  /*For intro-part*/
-  .intro {
-    width: 100%;
-    height: auto;
-    background-color: rgba(196, 189, 177, 0.17);
+  .intro-intro p{
+    font-size: 0.5vh;
+    width: 80%;
   }
-  .intro-wrapp {
-    width: 90%;
-    height: auto;
-    margin: 40px auto;
-    position: relative;
-  }
-  .intro-intro-wrap {
-    padding: 20px;
-    width: 90%;
+  #intro-sentence{
+    font-size: 1rem;
   }
 }
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 
 li {
   list-style: none;
@@ -109,28 +149,29 @@ a {
 .wrapper {
   width: 100%;
   margin: 0 auto;
-}
-
-.nav {
-  width: 100%;
-  /* border: 1px solid black; */
-  margin: 0 auto;
-}
-
-.nav ul {
-  width: 100%;
-  height: 40px;
   position: relative;
 }
 
-.nav li {
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
-  float: left;
+
+/*self-intro*/
+
+.self-intro{
+  text-align: center;
+  padding: 20px;
 }
 
-/* .intro {
+.self-intro h2{
+  margin: 40px;
+}
+
+.self-intro p{
+  margin: 40px;
+  font-size: 1.5rem;
+}
+
+/*about me*/
+
+.intro {
   width: 100%;
   height: 700px;
   background-color: rgba(196, 189, 177, 0.17);
@@ -138,50 +179,42 @@ a {
 
 .intro-wrapp {
   width: 90%;
-  height: 650px;
+  /* height: 650px; */
   margin: 40px auto;
   position: relative;
+  display: flex;
 }
 
-.intro-intro-wrap {
-  padding: 80px;
+.intro-intro {
+  padding: 40px;
   width: 50%;
-} */
+}
 
-.intro-intro-wrap p {
-  font-size: 20px;
+.intro {
+  clear: both;
+}
+
+.intro-intro p {
+  font-size: 1.3rem;
   padding-top: 20px;
   word-spacing: 2px;
   line-height: 1.6;
 }
 
-#myphoto {
+.spacing{
+  flex: 1;
+}
+
+.intro-photo img {
   width: 400px;
-  height: 600px;
+  height: auto;
   background-size: 100% 100%;
   position: absolute;
   right: 0;
   top: 40px;
 }
 
-/* .content{
-    width: 100%;
-    height: 400px;
-    border: 1px solid black;
-    margin: 0 auto;
-    padding: 20px;
-}
 
-.content-wrap{
-    width: 90%;
-    height: 300px;
-    border: 1px solid black;
-    margin: 20px auto;
-}
-
-.content-wrap p{
-    padding-top: 20px;
-} */
 
 .interest {
   width: 100%;
@@ -206,7 +239,7 @@ a {
 .interest-list {
   margin: 20px auto;
   /* border: 1px solid black; */
-  /* display: flex; */
+  display: flex;
 }
 
 .interest-list div {
@@ -224,3 +257,30 @@ a {
   height: 200px;
   width: 100%;
 }
+
+
+.contact-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(196, 189, 177, 0.17);
+}
+
+.contact-div{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.contact-div a {
+  margin: 20px;
+}
+
+.footer{
+  margin: 10px;
+}
+
+
+
+
+

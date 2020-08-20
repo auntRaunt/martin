@@ -4,50 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Martin</title>
+    <title>Martin Choi - Web Developer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="nav">
-            <ul>
-                <li class="icon"><a href="javascript:void(0)" onClick="myfunction">&#9776;</a></li>
-                <div class="n-icon">
-                    <li><a href="#intro">About Me</a></li>
-                    <li><a href="#interest">My interest</a></li>
-                </div>
-                
-                <li style="position: absolute; right: 30px;"><b>Martin Choi</b></li>
-
+        <nav>
+            <div class="logo">
+                <h4>Martin Choi</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#intro">About Me</a></li>
+                <li><a href="#interest">My Interest</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <!--For mobile view-->
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+
+        <div class="self-intro">
+            <h2>Hello, my name is Martin. </h1>
+                <p>I am a Passionate, Self-Motivated web developer from Hong Kong</p>
         </div>
+
+
+
         <div class="intro" id="intro">
             <div class="intro-wrapp">
-                <div class="intro-intro-wrap">
+                <div class="intro-intro">
                     <h1>About Martin</h1>
-                    <p>I graduated in mechanical engineering of Hong Kong Polytechnic University in 2018. After that I
-                        have worked in a manufactury for 2 years, and felt that I was not interested in the routines
-                        work. I want to challenge myself more and make the ideas in my mind into real things. Therefore,
-                        I have been learning the HTML, CSS, JAVASCRIPT in web in past few months. However, it gets
+                    <p id="intro-sentence">Preiously I have worked in a manufactury in China for 2 years, and felt that
+                        I was not
+                        interested in the routines
+                        work. After approaching coding, it makes me feel that everything are possible and anything
+                        can be displayed on the website. However, it gets
                         dispirited while working in an unrelated industry and self learning after get off work.
                         Therefore, I decided to quit the job and join the bootcamp for a systematic coding environment.
                     </p>
                 </div>
-                <img src="myphoto.jpg" alt="Me" id="myphoto">
+                <div class="intro-photo">
+                    <img src="myphoto.jpg" alt="Me" id="myphoto">
+                </div>
+
             </div>
         </div>
-        <!-- <div class="content" id="content">
-            <div class="content-wrap">
-                <h1>Why I go bootcamp?</h1>
-                <p>hi</p>
-            </div>
-        </div> -->
+
         <div class="interest" id="interest">
             <div class="interest-wrap">
                 <h1>My interest</h1>
-                <div class="interest-list">
+                <div class="interest-list" id="interest-list-id">
                     <div>
                         <p>Baseketball</p>
                         <img src="basketball.jpg" alt="basektball">
@@ -67,7 +79,18 @@
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+
+        <div class="contact-footer" id="contact">
+            <div class="contact-div">
+                <div class="spacing"></div>
+                <a href="https://www.linkedin.com/in/martin-choi-9b683a117" target="_blank">Linkedin</a></p>
+                <a href="mailto:martinchoi1995@gmail.com">Gmail</a>
+                <a href="https://github.com/auntRaunt">GitHub</a>
+                <div class="spacing"></div>
+            </div>
+            <div class="footer">CopyRight reserverd by Martin 2020</div>
+        </div>
+
     </div>
     <script src="script.js"></script>
 </body>
